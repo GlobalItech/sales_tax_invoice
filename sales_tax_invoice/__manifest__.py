@@ -4,7 +4,7 @@
     'category': 'Invoices',
     'summary':'Pakistan Sales Tax Invoice',
     'description' : "This module will be give sale tax invoices print. ",
-    'author' : 'Itechresources',
+    'author' : 'Itech resources',
     'website' : 'www.itechresources.com',
     
     'depends' : [

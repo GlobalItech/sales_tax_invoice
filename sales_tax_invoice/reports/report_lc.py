@@ -13,7 +13,7 @@ class LcReport(models.AbstractModel):
     _name = 'report.sales_tax_invoice.report_lc' #report.modulename.your_modelname of report
 
 
-    @api.multi
+   @api.multi
     def render_html(self, docids, data=None):
         comp_sales = self.env["res.company"].search([])
 
@@ -26,12 +26,17 @@ class LcReport(models.AbstractModel):
                 s=0
                 for t in r.invoice_line_tax_ids:
                     s= s+t.amount
-                
+                    
+                    
+            date_inv=""
+            if acct_invoice.date_invoice:
+                date_inv=(datetime.strptime(acct_invoice.date_invoice, "%Y-%m-%d")).strftime("%d-%m-%Y")    
             docargs = {
                 'datas':comp_sales,
                 'account':acct_invoice,
                 'customer':cust_invoice,
-                'table_data':table_data
+                'table_data':table_data,
+                'date':date_inv
             }
             
             return self.env['report'].render('sales_tax_invoice.report_lc',docargs)

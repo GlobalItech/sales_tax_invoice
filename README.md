@@ -1,2 +1,2 @@
 # sales_tax_invoice
-Pakistan Sales Tex Invoice
+Pakistan Sales Tax Invoice
